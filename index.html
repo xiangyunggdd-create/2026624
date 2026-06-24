@@ -1,2 +1,61 @@
-<script src="https://kit.fontawesome.com/954f5193ba.js" crossorigin="anonymous"></script>
-<i class="fa-solid fa-house"></i>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動式排序演算法視覺化</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/954f5193ba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-layer-group"></i> Sorting Visualizer
+        </div>
+        <div class="nav-controls">
+            <div class="control-group">
+                <label>演算法</label>
+                <select id="algorithm-select">
+                    <option value="bubble">氣泡排序 (Bubble Sort)</option>
+                    <option value="selection">選擇排序 (Selection Sort)</option>
+                    <option value="insertion">插入排序 (Insertion Sort)</option>
+                    <option value="merge">合併排序 (Merge Sort)</option>
+                    <option value="quick">快速排序 (Quick Sort)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>數量</label>
+                <input type="range" id="array-size" min="5" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label>速度</label>
+                <input type="range" id="speed" min="1" max="100" value="50">
+            </div>
+
+            <button id="generate-btn" class="btn secondary">
+                <i class="fa-solid fa-rotate-right"></i> 重置陣列
+            </button>
+            <button id="start-btn" class="btn primary">
+                <i class="fa-solid fa-play"></i> 開始排序
+            </button>
+            <button id="stop-btn" class="btn accent" disabled>
+                <i class="fa-solid fa-stop"></i> 停止
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="visualizer-container">
+            <!-- Bars will be generated here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
