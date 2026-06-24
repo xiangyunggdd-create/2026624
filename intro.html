@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的百香果植栽介紹 | PlantMate 植伴 - 台北專業智慧綠植</title>
+    <meta name="description" content="在台北大安區悉心照顧的 Level 5 智慧百香果盆栽。PlantMate 植伴提供土壤水分、日照與溫度的全天候 IoT 即時監控，記錄百香果的成長歷程與愛心共感互動。">
+    <meta name="keywords" content="百香果種植, 智慧植物照護, PlantMate, 植伴, 台北智慧盆栽, 植物愛心共感, 盆栽生長紀錄, 園藝IoT">
+    <meta name="author" content="PlantMate Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/954f5193ba.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=42">
+    <!-- Audio Script -->
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+</head>
+
+<body class="page-intro">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">PlantMate 🌱</a>
+            <div class="nav-links">
+                <a href="/"> <i class="fa-solid fa-arrow-left"></i> 返回儀表板</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="intro-container">
+
+        <!-- Left: Photo -->
+        <div class="plant-photo-card">
+            <div class="photo-tape"></div>
+            <div class="photo-overlay-hint"><i class="fa-solid fa-hand-holding-heart"></i> 點擊給予愛心</div>
+            <img src="{{ url_for('static', filename='images/user_plant.png') }}" alt="User Plant" class="plant-photo">
+            <div class="photo-caption">
+                Captured on 2025.12.12 📸
+            </div>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="intro-content">
+            <span class="intro-badge">Level 5 Passion Fruit</span>
+            <h1 class="intro-title">Hi, 我是您的<br>百香果 (Passion) 🌱</h1>
+            <p class="intro-bio">
+                我是熱情滿滿的百香果藤蔓！雖然現在還在成長中，但我已經準備好攀爬到更高的地方了。
+                <br>
+                只要給我足夠的陽光和水，未來我會結出酸甜美味的果實來報答您喔！
+                <br><br>
+                (點擊左邊的照片可以幫我打氣！)
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">128</div>
+                    <div class="stat-label">陪伴天數</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Top 5%</div>
+                    <div class="stat-label">生長速度</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="loveCount">98</div>
+                    <div class="stat-label">愛心能量 ❤️</div>
+                </div>
+            </div>
+
+            <div class="tags-container">
+                <span class="tag">#熱愛攀爬 🧗</span>
+                <span class="tag">#期待開花 🌸</span>
+                <span class="tag">#果實酸甜 🍹</span>
+                <span class="tag">#陽光愛好者 ☀️</span>
+            </div>
+
+            <!-- New Interaction Section -->
+            <div class="care-actions">
+                <h3>與百香果互動：</h3>
+                <div class="action-buttons">
+                    <button class="care-btn btn-water">
+                        <i class="fa-solid fa-droplet"></i> 澆水
+                    </button>
+                    <button class="care-btn btn-sun">
+                        <i class="fa-regular fa-sun"></i> 曬太陽
+                    </button>
+                    <button class="care-btn btn-music">
+                        <i class="fa-solid fa-music"></i> 唱歌
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PlantMate 植伴. Design by You. All rights reserved.</p>
+    </footer>
+
+    <!-- Linked External JS for intro-specific behaviors -->
+    <script src="{{ url_for('static', filename='js/intro.js') }}?v=11"></script>
+</body>
+
+</html>

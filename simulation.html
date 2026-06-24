@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情境模擬實驗室 | PlantMate 植伴 - 台北專業智慧盆栽共感互動</title>
+    <meta name="description" content="進入 PlantMate 植伴的情境模擬實驗室，體驗與智慧植物（如百香果）的深度情感共感互動。模擬起床日照、喝水補水、光線不足及晚安睡眠等多種生活情境。">
+    <meta name="keywords" content="植物情境模擬, 植物心情共感, 智慧盆栽實驗室, PlantMate, 台北植栽推薦, 植物IoT互動, 台北大安區盆栽">
+    <meta name="author" content="PlantMate Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/954f5193ba.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=42">
+    <!-- Audio -->
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+</head>
+
+<body class="page-simulation">
+    <canvas id="nature-bg"></canvas>
+
+    <nav class="navbar navbar-sim">
+        <div class="nav-container">
+            <a href="/" class="logo text-white">PlantMate 🌱</a>
+            <div class="nav-links">
+                <a href="/" class="text-white-trans"> <i class="fa-solid fa-arrow-left"></i> 返回儀表板</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="sim-header">
+        <h1>情境模擬實驗室</h1>
+        <p>Simulation Lab: 體驗與植物的深度共感互動</p>
+    </header>
+
+    <div class="sim-container">
+        <!-- Card 1 -->
+        <div class="scenario-card" data-scenario="morning">
+            <div class="card-img-top bg-morning"><i class="fa-regular fa-sun"></i></div>
+            <div class="card-body">
+                <h3 class="card-title">情境 1：早上起床</h3>
+                <p class="card-desc">植物偵測到您起床了，光線決定它一天的活力。</p>
+                <span class="btn-sim">開始模擬</span>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="scenario-card" data-scenario="hydration">
+            <div class="card-img-top bg-water"><i class="fa-solid fa-glass-water"></i></div>
+            <div class="card-body">
+                <h3 class="card-title">情境 2：喝水時刻</h3>
+                <p class="card-desc">您喝水時，植物也感受到口渴的共感連結。</p>
+                <span class="btn-sim">開始模擬</span>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="scenario-card" data-scenario="lowlight">
+            <div class="card-img-top bg-lowlight"><i class="fa-solid fa-cloud"></i></div>
+            <div class="card-body">
+                <h3 class="card-title">情境 3：光線不足</h3>
+                <p class="card-desc">陰雨天或室內昏暗，您的決定將影響它的心情。</p>
+                <span class="btn-sim">開始模擬</span>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="scenario-card" data-scenario="sleep">
+            <div class="card-img-top bg-sleep"><i class="fa-solid fa-moon"></i></div>
+            <div class="card-body">
+                <h3 class="card-title">情境 4：晚安睡眠</h3>
+                <p class="card-desc">夜深了，設定正確的睡眠儀式讓它長得更好。</p>
+                <span class="btn-sim">開始模擬</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Selection UI -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="sim-modal">
+            <span class="modal-close"><i class="fa-solid fa-xmark"></i></span>
+            <h2 id="modalTitle" class="modal-title-custom">Title</h2>
+            <div id="modalEvent" class="modal-event-custom">Event</div>
+            <div class="option-grid" id="optionGrid"></div>
+        </div>
+    </div>
+
+    <!-- FULL SCREEN ANIMATION LAYER -->
+    <div class="fs-anim-layer" id="fsLayer">
+        <!-- Dynamic Background Elements -->
+        <div id="fsBgElements"></div>
+
+        <!-- Center Content -->
+        <div class="fs-content">
+            <div class="fs-plant-icon" id="fsPlant"><i class="fa-solid fa-seedling"></i></div>
+            <div class="fs-message" id="fsMessage">Feedback Message</div>
+        </div>
+
+        <div class="fs-close-hint">點擊任意處關閉</div>
+    </div>
+
+    <!-- Linked External JS for simulation-specific behaviors -->
+    <script src="{{ url_for('static', filename='js/simulation.js') }}?v=11"></script>
+</body>
+
+</html>
